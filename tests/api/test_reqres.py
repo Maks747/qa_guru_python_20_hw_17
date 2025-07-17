@@ -139,7 +139,7 @@ def test_update_user():
 def test_single_user_not_found():
     endpoint = '/api/users/'
 
-    id = 23
+    id = 30
 
     headers = {
         'x-api-key': 'reqres-free-v1'
@@ -148,3 +148,4 @@ def test_single_user_not_found():
     response = requests.get(url + endpoint + str(id), headers=headers)
 
     assert response.status_code == 404
+    assert response.json() == {} # Означает, что тело ответа не соответствует ожидаемому JSON объекту
