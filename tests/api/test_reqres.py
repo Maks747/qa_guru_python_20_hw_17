@@ -88,7 +88,7 @@ def test_unsuccessful_register():
     endpoint = '/api/register'
 
     payload = {
-        "email": "eve.holt@reqres.in",
+        "email": "eve.holt@reqres.in"
     }
 
     headers = {
