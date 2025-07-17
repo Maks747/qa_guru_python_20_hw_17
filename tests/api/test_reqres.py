@@ -13,6 +13,7 @@ url = 'https://reqres.in'
 
 def test_get_single_user():
     endpoint = '/api/users/'
+
     id = 2
 
     headers = {
@@ -102,7 +103,9 @@ def test_unsuccessful_register():
 
 def test_delete_user():
     endpoint = '/api/users/'
+
     id = 2
+
     headers = {
         'x-api-key': 'reqres-free-v1'
     }
@@ -113,6 +116,7 @@ def test_delete_user():
 
 def test_update_user():
     endpoint = '/api/users/'
+
     id = 2
 
     payload = {
@@ -134,6 +138,7 @@ def test_update_user():
 
 def test_single_user_not_found():
     endpoint = '/api/users/'
+
     id = 23
 
     headers = {
