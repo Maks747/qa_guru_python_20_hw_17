@@ -123,6 +123,7 @@ def test_update_user():
     headers = {
         'x-api-key': 'reqres-free-v1'
     }
+
     response = requests.put(url + endpoint + str(id), data=payload, headers=headers)
     body = response.json()
 
@@ -130,3 +131,15 @@ def test_update_user():
     validate(body, update_user)
     assert body["name"] == "morpheus"
     assert body["job"] == "zion resident"
+
+def test_single_user_not_found():
+    endpoint = '/api/users/'
+    id = 23
+
+    headers = {
+        'x-api-key': 'reqres-free-v1'
+    }
+
+    response = requests.get(url + endpoint + str(id), headers=headers)
+
+    assert response.status_code == 404
